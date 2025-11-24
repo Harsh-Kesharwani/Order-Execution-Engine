@@ -118,8 +118,8 @@ Ensure the following are installed on your system:
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/order-execution-engine.git
-cd order-execution-engine
+git clone https://github.com/Harsh-Kesharwani/Order-Execution-Engine.git
+cd Order-Execution-Engine
 ```
 
 ### Step 2: Install Dependencies
