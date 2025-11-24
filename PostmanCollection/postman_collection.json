@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "b8a8171c-5c50-457e-864c-246e06b9dbb5",
+		"name": "order_execution",
+		"description": "REST + WebSocket requests for the Order Execution Engine.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "33166387"
+	},
+	"item": [
+		{
+			"name": "Create Market Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"tokenIn\": \"USDC\",\n  \"tokenOut\": \"SOL\",\n  \"amount\": 10,\n  \"side\": \"buy\",\n  \"type\": \"market\",\n  \"slippageBps\": 100,\n  \"delayMs\": 5000\n}"
+				},
+				"url": "{{base_url}}/api/orders/execute",
+				"description": "Creates a market order and returns orderId."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Order By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{base_url}}/api/orders/{{orderId}}",
+				"description": "Fetch order snapshot including status_history."
+			},
+			"response": []
+		},
+		{
+			"name": "Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{base_url}}/health"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:3000"
+		},
+		{
+			"key": "ws_host",
+			"value": "127.0.0.1:3000"
+		},
+		{
+			"key": "orderId",
+			"value": "REPLACE_WITH_ORDER_ID"
+		}
+	]
+}
